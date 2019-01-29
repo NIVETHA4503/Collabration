@@ -1,5 +1,6 @@
 package com.niit.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +13,11 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int jobID;
+	@Column(nullable=false)
 	private String jobTitle;
 	private String jobDescription;
 	private String skillsRequired;
+	@Column(nullable=false)
 	private double salary;
 	private String location;
 	private String postedon;
