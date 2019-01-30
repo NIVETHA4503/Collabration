@@ -13,7 +13,7 @@ import com.niit.models.ErrrorClazz;
 import com.niit.models.Job;
 
 @RestController
-public class JavaController {
+public class JobController {
 @Autowired
 private JobDao jobDao;
 @RequestMapping(value="/addjob",method=RequestMethod.POST)
