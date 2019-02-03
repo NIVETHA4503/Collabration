@@ -1,8 +1,8 @@
 /**
  * 
  */
-app.controller('JobCtrl',function($scope,JobService){
-	
+app.controller('JobCtrl',function($scope,JobService,$location){
+$scope.show=false;
 	
 	$scope.addJob=function(){
 		
@@ -11,6 +11,7 @@ app.controller('JobCtrl',function($scope,JobService){
 			alert('Job details inserted successfully...')
 			
 			$scope.job={}
+			$location.path('/getalljobs')
 		},function(response){ 
 			
 		console.log(response.status)
@@ -22,12 +23,22 @@ app.controller('JobCtrl',function($scope,JobService){
 	}
 	
 	
-//	JobService.getAllJobs().then(
-//			function(response){
-//				$scope.jobs=response.data
-//			},function(response){
-//				
-//			})
+	JobService.getAllJobs().then(
+			function(response){
+				$scope.jobs=response.data
+				console.log(response.status)
+			},function(response){
+				console.log(response.status)
+			})
+			$scope.showDetails=function(jobID){
+//		if($scope.show==false)
+//			$scope.show=true;
+//		else
+//		
+//		$scope.show=false;
+		$scope.show=!$scope.show
+		$scope.jobID=jobID
+	}
 })
 
 

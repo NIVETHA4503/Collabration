@@ -1,5 +1,7 @@
 package com.niit.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -63,8 +65,8 @@ public class Job {
 	public String getPostedon() {
 		return postedon;
 	}
-	public void setPostedon(String postedon) {
-		this.postedon = postedon;
+	public void setPostedon(String date) {
+		this.postedon = date;
 	}
 	public String getYrsOfExp() {
 		return yrsOfExp;
@@ -84,5 +86,6 @@ public class Job {
 	public void setQualification(String qualification) {
 		this.qualification = qualification;
 	}
+	
 
 }

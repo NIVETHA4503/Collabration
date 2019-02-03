@@ -1,0 +1,8 @@
+package com.niit.dao;
+import com.niit.models.User;
+public interface UserDao {
+	void userRegistration(User user);
+
+	boolean isEmailUnique(String email);
+boolean isPhonenumberUnique(String phonenumber);
+}
