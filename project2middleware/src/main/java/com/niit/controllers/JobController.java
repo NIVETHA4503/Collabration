@@ -62,7 +62,7 @@ public ResponseEntity<?> getAllJobs(HttpSession session){
 	System.out.println("Session createdTime " + session.getCreationTime());
 	System.out.println("Session Attribute loginId value is "+ session.getAttribute("loginId"));
 	String email=(String)session.getAttribute("loginId");
-	if(email==null){//not logged in,user is not an authenticated user
+	if(email==null){
 		ErrrorClazz errorClazz=new ErrrorClazz(5,"Please login..");
 		return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 	}
