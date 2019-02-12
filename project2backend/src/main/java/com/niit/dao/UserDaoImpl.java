@@ -55,6 +55,22 @@ query.setString("pnumber",phonenumber);
 		User user=(User)session.get(User.class, email);
 		return user;		
 	}
+	public boolean isUpdatedPhonenumberUnique(String phonenumber, String email) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from User where email!=:email and phonenumber=:phonenumber");
+		query.setString("email", email);
+		query.setString("phonenumber", phonenumber);
+		User user=(User)query.uniqueResult();
+		if(user==null)
+			return true;
+		else
+			return false;
+		
+
+
+
+		
+	}
 
 
 }

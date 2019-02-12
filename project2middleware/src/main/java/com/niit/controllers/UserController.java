@@ -66,7 +66,7 @@ private UserDao userDao;
 		 String email=(String)session.getAttribute("loginId");
 		 if(email==null){
 			 ErrrorClazz errorClazz=new ErrrorClazz(5,"Please login..");
-			return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);//401 - login.html
+			return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		 }
 		User user= userDao.getUser(email);
 		 user.setOnline(false);
@@ -95,7 +95,7 @@ private UserDao userDao;
 			 ErrrorClazz errorClazz=new ErrrorClazz(5,"Please login..");
 			 return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		 }
-		 if(!userDao.isPhonenumberUnique(user.getPhonenumber())){
+		 if(!userDao.isUpdatedPhonenumberUnique(user.getPhonenumber(),email)){
 				ErrrorClazz errorClazz=new ErrrorClazz(1,"Phone number already exists.. pls enter another phonenumber");
 				return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.INTERNAL_SERVER_ERROR);
 		 }

@@ -9,5 +9,6 @@ public interface UserDao {
 
 void updateUser(User validUser);
 User getUser(String email);
+boolean isUpdatedPhonenumberUnique(String phonenumber,String email);
 
 }
