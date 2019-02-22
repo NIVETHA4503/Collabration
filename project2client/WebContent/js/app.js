@@ -13,7 +13,8 @@ app.config(function($routeProvider){
 	.when('/addblog',{controller:'BlogPostCtrl',templateUrl:'views/blogpostform.html'})
 	.when('/blogsapproved',{controller:'BlogPostCtrl',templateUrl:'views/blogsapproved.html'})
 	.when('/blogswaitingforapproval',{controller:'BlogPostCtrl',templateUrl:'views/blogswaitingforapproval.html'})
-	
+	.when('/getblogwaitingforapproval/:blogpostid',{controller:'BlogInDetailCtrl',templateUrl:'views/blogapprovalform.html'})
+	.when('/getblogapproved/:blogpostid',{controller:'BlogInDetailCtrl',templateUrl:'views/blogindetail.html'})
 	.otherwise({templateUrl:'views/home.html'})
 })
 

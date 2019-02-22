@@ -46,6 +46,10 @@ app.controller('BlogPostCtrl',function($scope,BlogPostService,$location,$rootSco
 					//Display the error message in the same view
 				$scope.error=response.data
 			})
+			
+			$scope.addBoldTags=function(){
+		$scope.blogPost.blogContent=$scope.blogPost.blogContent + "<b></b>"
+	}
 })
 
 

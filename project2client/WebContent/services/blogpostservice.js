@@ -18,7 +18,19 @@ app.factory('BlogPostService',function($http){
 	blogPostService.getBlogsWaitingForApproval=function(){
 		return $http.get(BASE_URL + "/blogswaitingforapproval")
 	}
+	blogPostService.getBlog=function(blogPostId){
+		alert('call the middleware to get the data')
+		return $http.get(BASE_URL + "/getblog/"+blogPostId)
+	}
 	
+	blogPostService.approveBlogPost=function(blogPost){
+		return $http.put(BASE_URL + "/approveblogpost",blogPost)
+	}
+	
+	blogPostService.rejectBlogPost=function(blogPost){
+		return $http.put(BASE_URL + "/rejectblogpost",blogPost)
+	}
+
 	
 	return blogPostService;
 })

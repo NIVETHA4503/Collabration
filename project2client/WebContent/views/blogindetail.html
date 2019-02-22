@@ -1,0 +1,13 @@
+<!-- result of the query select * from blogpost where blogpostid=? -->
+<div class="panel panel-primary">
+<div class="panel-heading">
+<b>Blog Title:</b>{{blogPost.blogTitle}}<br>
+<b>Posted On :</b> {{blogPost.postedOn | date:'dd-MMM-yyyy :hh:mm:ss'}}<br>
+<b>Author    :</b>{{blogPost.author.email}}<br>
+</div>
+<div class=panel-body>
+<p ng-bind-html="content"><br>
+likes {{blogPost.likes}}<a><span class="glyphicon glyphicon-thumbs-up"></span></a><br>
+comments<br>
+</div>
+</div>
