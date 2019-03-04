@@ -1,5 +1,7 @@
 /**
- * 
+ *   /getblogwaitingforapproval/:blogpostid
+ * BlogInDetailCtrl
+ *   select * from blogpost where blogpostid=?
  */
 app.controller('BlogInDetailCtrl',function($scope,BlogPostService,$routeParams,$location,$sce){
 	var blogPostId=$routeParams.blogpostid //param name is defined in app.config in when statment
@@ -17,6 +19,18 @@ app.controller('BlogInDetailCtrl',function($scope,BlogPostService,$routeParams,$
 					$location.path('/login')
 			})
 	
+	//STATEMENT 
+	BlogPostService.hasUserLikedBlogpost(blogPostId).then(
+		function(response){
+		 if(response.data=='')
+			 $scope.isLiked=false  //glyphicon in black
+			 else
+				 $scope.isLiked=true //glyphicon in blue
+	    },
+	    function(response){
+		if(response.status==401)
+			$location.path('/login')
+	    })
     //Function for approving a blogpost
 		$scope.approveBlogPost=function(blogPost){
 		   BlogPostService.approveBlogPost(blogPost).then(
@@ -41,6 +55,49 @@ app.controller('BlogInDetailCtrl',function($scope,BlogPostService,$routeParams,$
 						   $location.path('/login')
     			   })
        }	  
+       
+       $scope.updateLikes=function(blogPostId){
+    	   BlogPostService.updateLikes(blogPostId).then(
+    		function(response){
+    			$scope.isLiked=!$scope.isLiked
+    			$scope.blogPost=response.data//response.data is blogPost object which has updated likes
+    		},	   
+    	    function(response){
+    			if(response.status==401)
+					   $location.path('/login')
+    		}
+    	   )
+       }
+       
+       $scope.addBlogComment=function(commentTxt,blogPost){//when user clicks button POST COMMENT
+    	   //CREATE A BLOGCOMMENT OBJECT AND SET THE VALUE FOR THESE TWO PROPERTIES
+    	   $scope.blogComment={}
+    	   $scope.blogComment.commentTxt=commentTxt
+    	   $scope.blogComment.blogPost=blogPost
+    	   console.log($scope.blogComment)
+    	   BlogPostService.addBlogComment($scope.blogComment).then(
+    			   function(response){
+    				   $scope.commentTxt=''  //clear the textarea after posting the comment
+    				   $scope.blogComment=response.data //values for all properties
+    			   },
+    			   function(response){
+    				   if(response.status==401)
+    					   $location.path('/login')
+    			   })
+       }
+       
+       $scope.getAllBlogComments=function(blogPostId){//when user clicks 'show comments'
+    	   BlogPostService.getAllBlogComments(blogPostId).then(
+    			   function(response){
+    				   $scope.blogComments=response.data //Array of blogcomments
+    			   },
+    			   function(response){
+    				   if(response.status==401)
+    					   $location.path('/login')
+    			   })
+       }
 })
+
+
 
 

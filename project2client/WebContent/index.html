@@ -1,23 +1,107 @@
+
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta charset="ISO-8859-1"> -->
+<!-- <title>Insert title here</title> -->
+<!-- </head> -->
+<!-- <body ng-app="app">bootstrap an angular module 'app' -->
+<!-- <div class="container"> -->
+<!-- <nav class="navbar navbar-inverse" > -->
+<!-- <div  class="navbar-header"> -->
+<!-- <a href="" class="navbar-brand"><img src="resources/images/niit.jpg" height="30px" width="70px"></a> -->
+<!-- <button type="button" class="navbar-toggle collapsed"  -->
+<!--    data-toggle="collapse" data-target="#collapse-example" aria-expanded="false"> -->
+<!--         <span class="sr-only">Toggle navigation</span> -->
+<!--         <span class="icon-bar"></span> -->
+<!--         <span class="icon-bar"></span> -->
+<!--         <span class="icon-bar"></span> -->
+<!--       </button> -->
+<!-- </div> -->
+<!-- <div class="collapse navbar-collapse" id="collapse-example"> -->
+
+<!-- <ul class="nav navbar-nav" > -->
+<!-- <li><a href="#/addjob" ng-show="user.role=='ADMIN'">Add Job</a></li>view is jobform.html -->
+
+<!-- <!-- 'user' is a $rootScope variable which will get added once the user log in successfully --> -->
+<!-- <li><a href="#/getalljobs" ng-show="user!=undefined" >Get All Jobs</a></li>view is jobslist.html,show this link only if user is logged in -->
+<!-- <li><a href="#/registration" ng-show="user==undefined">Sign Up</a></li> view is registrationform.html -->
+<!-- <li><a href="#/login" ng-show="user==undefined"><span class="glyphicon glyphicon-log-in">Sign In</span></a></li>view is login.html -->
+<!-- <li><a href="" ng-show="user!=undefined">{{user.firstname}}&nbsp;{{user.lastname}}</a></li> -->
+<!-- <li><a href="#/updateuserprofile" ng-show="user!=undefined">Edit UserProfile</a></li>view is updateuserprofile.html -->
+
+<!-- <li class="dropdown" > -->
+<!-- <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="user.email!=undefined">  -->
+<!-- <span class="glyphicon glyphicon-globe" >  -->
+<!--   <span class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span></span></a> -->
+<!--    <ul class="dropdown-menu" > -->
+<!--   <span class="dropdown-content"> -->
+<!--    <li ng-repeat="notification in notifications"> -->
+<!--      <a href="#/getnotification/{{notification.notificationId}}">Blog titled "<b>{{notification.blogTitle}} "</b>approval status is updated </a> -->
+<!--      <hr> -->
+<!--    </li> -->
+<!--    </span> -->
+<!--    </ul> -->
+<!-- </li> -->
+
+
+
+<!-- <li class="dropdown"> -->
+<!-- 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-show="user!=undefined">Blog -->
+<!-- 			<span class="caret"></span></a> -->
+<!-- <ul class="dropdown-menu"> -->
+<!-- <li><a href="#/addblog">Add Blog</a></li> -->
+<!-- <li><a href="#/blogsapproved">Blogs Approved</a></li> -->
+<!-- <li><a href="#/blogswaitingforapproval" ng-show="user.role=='ADMIN'">Blogs Waiting for approval</a></li> -->
+	
+<!-- </ul> -->
+<!-- </li> -->
+<!-- <li><a href="" ng-click="logout()" ng-show="user!=undefined"><span class="glyphicon glyphicon-log-out">Sign out</span></a></li> -->
+<!-- </ul> -->
+<!-- </div> -->
+<!-- </nav> -->
+<!-- </div> -->
+<!-- <div class="container"> -->
+<!-- <!-- content of partial views will get added here --> -->
+<!-- <div ng-view></div> -->
+<!-- </div> -->
+<!-- </body> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/glyphiconcolor.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/notification.css"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- <script type="text/javascript" -->
+<!-- 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script> -->
+<!-- 	<script type="text/javascript" -->
+<!-- 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script> -->
+<!-- 		<script type="text/javascript" -->
+<!-- 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script> -->
+<!-- <script type="text/javascript" src="js/app.js"></script> -->
+<!-- <script type="text/javascript" src="controllers/jobcontroller.js"></script> -->
+<!-- <script type="text/javascript" src="services/jobservice.js"></script> -->
+
+<!-- <script type="text/javascript" src="controllers/usercontroller.js"></script> -->
+<!-- <script type="text/javascript" src="services/userservice.js"></script> -->
+
+<!-- <script type="text/javascript" src="controllers/blogpostcontroller.js"></script> -->
+<!-- <script type="text/javascript" src="controllers/blogindetailcontroller.js"></script> -->
+<!-- <script type="text/javascript" src="services/blogpostservice.js"></script> -->
+<!-- <script type="text/javascript" src="controllers/notificationcontroller.js"></script> -->
+<!-- <script type="text/javascript" src="services/notificationservice.js"></script> -->
+
+<!-- </html> -->
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Job Site</title>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 </head>
-
-<body ng-app="app">
+<body ng-app="app"><!-- bootstrap an angular module 'app' -->
 <div class="container">
-
-
-
-
-<!-- <nav class="navbar navbar-dark primary-color"> -->
-<!--   <form class="form-inline my-2 my-lg-0 ml-auto"> -->
-  
-
 <nav class="navbar navbar-inverse" >
 <div  class="navbar-header">
-<a href="" class="navbar-brand"><img src="resources/images/j.jpg" height="30px" width="70px"></a>
+<a href="" class="navbar-brand"><img src="resources/images/niit.jpg" height="30px" width="70px"></a>
 <button type="button" class="navbar-toggle collapsed" 
    data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -29,15 +113,34 @@
 <div class="collapse navbar-collapse" id="collapse-example">
 
 <ul class="nav navbar-nav" >
-<li><a href="#/addjob"ng-show="user.role=='ADMIN'">Add Job</a></li>
-<li><a href="#/getalljobs"ng-show="user!=undefined" >Get All Jobs</a></li>
-<li><a href="#/registration"ng-show="user==undefined">Sign Up</a></li>
-<li><a href="#/login"ng-show="user==undefined"><span class="glyphicon glyphicon-log-in">Sign in</span></a></li>
-<li><a href="" ng-show="user!=undefined">{{user.firstname}}&nbsp;{{user.lastname}}</a></li>
-<li><a href="#/updateuserprofile" ng-show="user!=undefined">Edit UserProfile</a></li>
+<li><a href="#/addjob" ng-show="user.role=='ADMIN'">Add Job</a></li><!-- view is jobform.html -->
 
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-show="user!=undefined">Blog
-<span class="caret"></span></a>
+<!-- 'user' is a $rootScope variable which will get added once the user log in successfully -->
+<li><a href="#/getalljobs" ng-show="user!=undefined" >Get All Jobs</a></li><!-- view is jobslist.html,show this link only if user is logged in -->
+<li><a href="#/registration" ng-show="user==undefined">Sign Up</a></li> <!-- view is registrationform.html -->
+<li><a href="#/login" ng-show="user==undefined"><span class="glyphicon glyphicon-log-in">Sign In</span></a></li><!-- view is login.html -->
+<li><a href="" ng-show="user!=undefined">{{user.firstname}}&nbsp;{{user.lastname}}</a></li>
+<li><a href="#/updateuserprofile" ng-show="user!=undefined">Edit UserProfile</a></li><!-- view is updateuserprofile.html -->
+
+<li class="dropdown" >
+<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="user.email!=undefined"> 
+<span class="glyphicon glyphicon-globe" > 
+  <span class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span></span></a>
+   <ul class="dropdown-menu" >
+  <span class="dropdown-content">
+   <li ng-repeat="notification in notifications">
+     <a href="#/getnotification/{{notification.notificationId}}">Blog titled "<b>{{notification.blogTitle}} "</b>approval status is updated </a>
+     <hr>
+   </li>
+   </span>
+   </ul>
+</li>
+
+
+
+<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-show="user!=undefined">Blog
+			<span class="caret"></span></a>
 <ul class="dropdown-menu">
 <li><a href="#/addblog">Add Blog</a></li>
 <li><a href="#/blogsapproved">Blogs Approved</a></li>
@@ -47,33 +150,36 @@
 </li>
 <li><a href="" ng-click="logout()" ng-show="user!=undefined"><span class="glyphicon glyphicon-log-out">Sign out</span></a></li>
 </ul>
-</div></form>
+</div>
 </nav>
 </div>
 <div class="container">
-<div ng-view=""></div>
+<!-- content of partial views will get added here -->
+<div ng-view></div>
 </div>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/glyphiconcolor.css">
+<link rel="stylesheet" href="resources/css/notification.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-    
-    
-<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
-<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="services/jobservice.js"></script>
+
 <script type="text/javascript" src="controllers/usercontroller.js"></script>
 <script type="text/javascript" src="services/userservice.js"></script>
+
 <script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
 <script type="text/javascript" src="controllers/blogindetailcontroller.js"></script>
 <script type="text/javascript" src="services/blogpostservice.js"></script>
-
-<meta charset="ISO-8859-1">
+<script type="text/javascript" src="controllers/notificationcontroller.js"></script>
+<script type="text/javascript" src="services/notificationservice.js"></script>
 
 </html>
