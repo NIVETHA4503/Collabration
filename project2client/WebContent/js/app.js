@@ -25,10 +25,10 @@ app.config(function($routeProvider){
 	.when('/blogswaitingforapproval',{controller:'BlogPostCtrl',templateUrl:'views/blogswaitingforapproval.html'})
 	.when('/getblogwaitingforapproval/:blogpostid',{controller:'BlogInDetailCtrl',templateUrl:'views/blogapprovalform.html'})
 	.when('/getblogapproved/:blogpostid',{controller:'BlogInDetailCtrl',templateUrl:'views/blogindetail.html'})
-	.otherwise({templateUrl:'views/home.html'}
 	.when('/home',{controller:'NotificationCtrl',templateUrl:'views/home.html'})
 	.when('/getnotification/:notificationId',{controller:'NotificationCtrl',templateUrl:'views/notificationindetail.html'})
-	.otherwise({controller:'NotificationCtrl',templateUrl:'views/home.html'}))
+	.otherwise({controller:'NotificationCtrl',templateUrl:'views/home.html'})
+
 })
 app.run(function($rootScope,UserService,$location,$cookieStore){//when module gets instantiated, get newly created $rootScope, add logout function to the $rootScope objecgt
 	alert('app.run function is getting executed...')

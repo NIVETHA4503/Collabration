@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name="notification_Table")
+@Table(name="Notification_Table")
 public class Notification {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
